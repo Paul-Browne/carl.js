@@ -1,0 +1,26 @@
+{
+	"form" : [
+		"css/form.css",
+    "js/form-validator.js"
+	],
+	"table" : [
+		"css/table.css",
+    "js/table-sorter.js"
+	],
+  ".js-custom-select": [
+    "js/custom-select.js"
+  ],
+  ".homepage-carousel" : [
+    "js/carousel.js?v=3",
+    "css/carousel.css?v=3"
+  ],
+  "html.ie9" : [
+    "css/old-browser.css"
+  ],
+  ".no-objectfit" : [
+    "js/object-fit-polyfil.js"
+  ]
+}
+
+// this is just a simple example of what resorces would be loaded
+// depending on what selectors were found in the DOM
