@@ -26,3 +26,11 @@ and in the `resources.json`
 }
 ```
 
+Just include the `resources.json` in the root of your project and place the `clr.min.js` file just before the closing body tag on every page like so.
+
+```html
+  <script src="js/clr.min.js"></script>
+</body>
+```
+
+and your good to go. Start adding your dependencies to selectors in the resources.json
