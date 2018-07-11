@@ -12,8 +12,9 @@
             for (key in resources) {
                 
                 // check if the selector exists in the DOM
+                // or is a truthy object of the window
                 
-                if (document.querySelector(key)) {
+                if (document.querySelector(key) || window[key]) {
                     
                     // if so, iterate over the array of resources for that selector
                     
