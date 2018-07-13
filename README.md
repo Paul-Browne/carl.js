@@ -1,6 +1,6 @@
 # clr
 
-conditionally load resources
+conditionally load resources in ~450 bytes (~300 after gzip)
 
 resources are files like `table-sorter.js` or `carousel.css`
 
@@ -25,6 +25,16 @@ and in the `resources.json`
 }
 ```
 
+or to load a polyfil based on Modernizr feature detection
+
+```json
+{
+  ".no-objectfit" : [
+    "js/object-fit-polyfil.js"
+  ]
+}
+```
+
 Just include the `resources.json` in the root of your project and place the `clr.min.js` file just before the closing body tag on every page like so.
 
 ```html
@@ -32,4 +42,4 @@ Just include the `resources.json` in the root of your project and place the `clr
 </body>
 ```
 
-and your good to go. Start adding your dependencies to selectors in the resources.json
+and your good to go. Start adding your dependencies to selectors or window objects in the resources.json
