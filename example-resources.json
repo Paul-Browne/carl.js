@@ -15,5 +15,15 @@
   ],
   "html:not(#contact-page)" : [
     "css/every-page-but-contact-page.css"
+  ],
+    
+  "Modernizr.scrollsnappoints" : [
+    "css/cool-scroll-snap-stuff.css"
+  ],
+  "!Modernizr.cssgrid" : [
+    "css/flexbox-fallback.css"
+  ],
+  "!!dataLayer" : [
+    "js/some-google-analytics-script.js"
   ]
 }
