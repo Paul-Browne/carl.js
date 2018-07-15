@@ -1,0 +1,19 @@
+{
+  "form" : [
+    "css/form.css",
+    "js/form-validator.js"
+  ],
+  "#home-page" : [
+    "css/home-page.css"
+  ],
+  "[data-table-sorter]" : [
+    "js/table-sorter.js"
+  ],
+  "pre > code": [
+      "css/github-syntax-highlighting.css",
+      "js/highlight.pack.js"
+  ],
+  "html:not(#contact-page)" : [
+    "css/every-page-but-contact-page.css"
+  ]
+}
