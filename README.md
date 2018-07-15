@@ -1,6 +1,6 @@
 # clr
 
-conditionally load resources in ~400 bytes
+conditionally load resources in ~400 bytes of javascript
 
 resources are files like `table-sorter.js` or `carousel.css`
 
