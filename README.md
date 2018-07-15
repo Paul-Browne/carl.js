@@ -1,58 +1,66 @@
-# clr
+# crl
 
-conditionally load resources in ~400 bytes of javascript
+Conditional Resource Loader in ~500 bytes of javascript
 
-resources are files like `table-sorter.js` or `carousel.css`
+If your lazy but efficient and want just one place where you can manage what css or javascript resources are loaded, depending on wheather are not they are actually needed, then maybe crl is for you
 
-conditions are what selectors (classes, ids or plain old html tags) are found in the DOM or is a truthy object of the window, eg `window.something = true`
+##### How does it work
 
-So, for example if you want to put a carousel on one page, but only want to load the dependant `carousel.css` and `carousel.js` files **if** the class `amazing-carousel` is present in the DOM, rather than including carousel resources on every page.
+crl works in two parts; the resources json and the script, basically the script runs tests, then if the test is passed a resource or resources will be loaded. simple.
 
-### testing for selectors
+##### the resources.json
 
-in the `resources.json`
+the `resources.json` is a json file that lives at the root of your project and might look something like this
 
 ```json
 {
   ".amazing-carousel" : [
     "css/carousel.css",
     "js/carousel.js"
+  ],
+  ".no-objectfit" : [
+    "js/object-fit-polyfill.js"
   ]
 }
 ```
 
-now, if the class `amazing-carousel` was presnt on the page, eg.
+So basically whats happening here is that if the class `amazing-carousel` is found in the DOM, then the carousel resources `carousel.css` and `carousel.js` will be loaded. Similarly if the class `no-objectfit` is found, then the `object-fit-polyfill.js` will be loaded
 
-```html
-<div class="amazing-carousel">
-  ...
-</div>
-```
-
-then the `css/carousel.css` and `js/carousel.js` resources would be loaded
-
-
-you could use it to load a polyfill based on Modernizr feature detection like so
+You aren't just limited to classes. You can also use id's, plain tag names or even data-attribute selectors. Basically any valid css selector that would work in a `querySelector()`, like so
 
 ```json
 {
-  ".no-objectfit" : [
-    "js/object-fit-polyfil.js"
+  "form" : [
+    "css/form.css",
+    "js/form-validator.js"
+  ],
+  "#home-page" : [
+    "css/home-page.css"
+  ],
+  "[data-table-sorter]" : [
+    "js/table-sorter.js"
+  ],
+  "pre > code": [
+      "css/github-syntax-highlighting.css",
+      "js/highlight.pack.js"
+  ],
+  "html:not(#contact-page)" : [
+    "css/every-page-but-contact-page.css"
   ]
 }
 ```
 
-As mentioned, you can test for truthy, falsey or undefined values on window objects
+As well as testing for css selectors, you can also test window objects, like `window.something`. So, for example, if you wanted to test if the browser supports scroll snap points using Modernizr
 
 ```json
 {
   "Modernizr.scrollsnappoints" : [
-    "css/scroll-snap-cool-stuff.css"
+    "css/cool-scroll-snap-stuff.css"
   ]
 }
 ```
 
-or, like the object-fit example, load a fallback/polyfill if the test returns false
+or, like the object-fit example, to load a fallback/polyfill if the test returns false use `!`
 
 ```json
 {
@@ -62,7 +70,7 @@ or, like the object-fit example, load a fallback/polyfill if the test returns fa
 }
 ```
 
-and finally, test if a window object is undefined or falsey
+and finally, use the `!!` to test if a window object is **undefined** or falsey
 
 ```json
 {
@@ -72,14 +80,17 @@ and finally, test if a window object is undefined or falsey
 }
 ```
 
-Just include the `resources.json` in the root of your project and place the `clr.min.js` file just before the closing body tag on every page like so.
+Just include the `resources.json` in the root of your project and place the `crl.min.js` file just before the closing body tag on every page like so.
 
 ```html
-  <script src="js/clr.min.js"></script>
+  <script src="js/crl.min.js"></script>
 </body>
 ```
 
-and your good to go. Start adding your dependencies to selectors or window objects in the resources.json
+and your good to go. Start adding your tests and resources in the resources.json
+
+
+
 
 
 
