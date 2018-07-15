@@ -87,11 +87,24 @@ Just include the `resources.json` in the root of your project and place the `crl
 </body>
 ```
 
-and your good to go. Start adding your tests and resources in the `resources.json
+and your good to go. Start adding your tests and resources in the `resources.json`
 
 
+#### Q & A
 
+##### will there be FLOC (flashes of unstyled content)?
+Yes, until the resource is loaded the html will be seen unstyled. You could get around this by hiding the html, then loading a small piece of css thet unhides it.
 
+```json
+{
+  "html" : [
+    "css/unhide-the-page.css"
+  ]
+}
+```
 
+##### what size should the resources be?
+If the resource is only a few bytes of css like `h1.big { font-size: 5rem; line-height: 1.2 }` then it's not really worth creating a test just for that. Any resource that is over 1kb is ok to load conditionally.
 
-
+##### what about content that is added to the DOM dynamically?
+The `crl.min.js` is loaded once just before the closing body tag, so any css selectors or window objects would have to be already present in the DOM. The script can of cource be called again as a callback after you've loaded your dynamic content, then all the tests would be ran again
