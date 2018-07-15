@@ -1,6 +1,6 @@
 # clr
 
-conditionally load resources in ~450 bytes (~300 after gzip)
+conditionally load resources in ~400 bytes
 
 resources are files like `table-sorter.js` or `carousel.css`
 
@@ -8,13 +8,9 @@ conditions are what selectors (classes, ids or plain old html tags) are found in
 
 So, for example if you want to put a carousel on one page, but only want to load the dependant `carousel.css` and `carousel.js` files **if** the class `amazing-carousel` is present in the DOM, rather than including carousel resources on every page.
 
-```html
-<div class="amazing-carousel">
-  ...
-</div>
-```
+### testing for selectors
 
-and in the `resources.json`
+in the `resources.json`
 
 ```json
 {
@@ -25,12 +21,53 @@ and in the `resources.json`
 }
 ```
 
-or to load a polyfil based on Modernizr feature detection
+now, if the class `amazing-carousel` was presnt on the page, eg.
+
+```html
+<div class="amazing-carousel">
+  ...
+</div>
+```
+
+then the `css/carousel.css` and `js/carousel.js` resources would be loaded
+
+
+you could use it to load a polyfill based on Modernizr feature detection like so
 
 ```json
 {
   ".no-objectfit" : [
     "js/object-fit-polyfil.js"
+  ]
+}
+```
+
+As mentioned, you can test for truthy, falsey or undefined values on window objects
+
+```json
+{
+  "Modernizr.scrollsnappoints" : [
+    "css/scroll-snap-cool-stuff.css"
+  ]
+}
+```
+
+or, like the object-fit example, load a fallback/polyfill if the test returns false
+
+```json
+{
+  "!Modernizr.cssgrid" : [
+    "css/flexbox-fallback.css"
+  ]
+}
+```
+
+and finally, test if a window object is undefined or falsey
+
+```json
+{
+  "!!dataLayer" : [
+    "js/some-google-analytics-script.js"
   ]
 }
 ```
@@ -43,3 +80,7 @@ Just include the `resources.json` in the root of your project and place the `clr
 ```
 
 and your good to go. Start adding your dependencies to selectors or window objects in the resources.json
+
+
+
+
