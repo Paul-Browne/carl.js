@@ -87,7 +87,7 @@ Just include the `resources.json` in the root of your project and place the `crl
 </body>
 ```
 
-and your good to go. Start adding your tests and resources in the resources.json
+and your good to go. Start adding your tests and resources in the `resources.json
 
 
 
