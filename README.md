@@ -118,7 +118,7 @@ and your good to go. Start adding your tests and resources in the `resources.jso
 
 ## Combining the script and resources.json 
 
-Since the script is very small you might want to just include the resources.json directly inside it. This will be more efficient since it cuts out one request for the `resources.json` Use the `crl-and-resources.bundle.js` for this, and include it just before the closing body tag instead of `crl.min.js`
+Since the script is very small you might want to just include the resources.json directly inside it. This will be more efficient since it cuts out one request for the `resources.json` Use the `crl.bundle.js` for this, and include it just before the closing body tag instead of `crl.min.js`
 
 ## Q & A
 
