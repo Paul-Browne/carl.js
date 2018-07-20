@@ -8,13 +8,13 @@
     ".global-footer" : [
         "components/global-footer.html"
     ],
-    "noFLOC" : [
-        "css/un-hide.css"
-    ],
     "test1" : [
 
     ],
     "!test2" : [
         
+    ],
+    "html.hide-until-loaded" : [
+        "css/un-hide.css"
     ]
 }
