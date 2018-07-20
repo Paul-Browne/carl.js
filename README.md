@@ -6,7 +6,7 @@ If your lazy but efficient and want just one place where you can manage what css
 
 ## How does it work
 
-Carl.js works in two parts; A script and a the resources json, basically the script runs tests, then if the test is passed a resource - defined in the `resources.json` will be loaded. simple.
+Carl.js works in two parts; A script and the resources json, basically the script runs tests, then if the test is passed a resource - defined in the `resources.json` - will be loaded. simple.
 
 ## The resources.json
 
