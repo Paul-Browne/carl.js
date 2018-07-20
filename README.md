@@ -1,6 +1,6 @@
 # crl
 
-Conditional Resource Loader in 1Kb of javascript
+Conditional Resource Loader in about 500 bytes of javascript
 
 If your lazy but efficient and want just one place where you can manage what css, javascript or even html resources are loaded, depending on wheather are not they are actually needed, then maybe crl is for you
 
@@ -159,7 +159,7 @@ Do this...
   <div>
     <p>Copyright 2020<p>
     <div>
-      Site map etc...
+      site map, social media, contacts etc...
     </div>      
   </div>
 
@@ -177,7 +177,7 @@ Even better would be to inline the scripts and styles to reduce http requests (s
   <div>
     <p>Copyright 2020<p>
     <div>
-      Site map etc...
+      site map, social media, contacts etc...
     </div>      
   </div>
 
