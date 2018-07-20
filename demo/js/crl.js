@@ -17,12 +17,11 @@
                             newElement.href = resource;
                             document.head.appendChild(newElement);
                         } else if (/\.html($|\?)/.test(resource)) {
-                            console.log(key);
+                            var storeKey = key;
                             var xhr = new XMLHttpRequest();
                             xhr.onreadystatechange = function() {
                                 if (xhr.readyState == 4 && xhr.status == 200) {
-                                    console.log(key);
-                                    document.querySelector(key).outerHTML = xhr.responseText;
+                                    document.querySelector(storeKey).outerHTML = xhr.responseText;
                                     var scripts = new DOMParser().parseFromString(xhr.responseText, 'text/html').querySelectorAll("script");
                                     var i = scripts.length;
                                     while(i--){                                        
