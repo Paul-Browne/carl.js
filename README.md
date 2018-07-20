@@ -196,4 +196,4 @@ Even better would be to inline the scripts and styles to reduce http requests (s
 ### Can I use carl to load all my html as components
 You could, but carl wasn't really built for that purpose. If you want to do that kind of thing then maybe consider using react or some other MVC framework.
 
-### [DEMOS](https://github.com/Paul-Browne/carl/tree/master/demo)
+### [DEMOS PAGE](https://github.com/Paul-Browne/carl/tree/master/demo)
