@@ -120,7 +120,7 @@ and your good to go. Start adding your tests and resources in the `resources.jso
 
 ## Combining carl.js and resources.json 
 
-Since the script is very small you might want to just include the resources.json directly inside Carl.js. This will be more efficient since it cuts out one request for the `resources.json` Use the `carl.bundle.js` for this, and include it just before the closing body tag instead of `carl.min.js`
+Since the script is very small you might want to just include the resources.json directly inside Carl.js. This will be more efficient since it cuts out one request for the `resources.json` Use the [`carl.bundle.js`](https://github.com/Paul-Browne/carl.js/blob/master/carl.bundle.js) for this, and include it just before the closing body tag instead of `carl.min.js`
 
 ## Q & A
 
