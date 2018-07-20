@@ -2,7 +2,7 @@
     "table": [
         "css/table.css"
     ],
-    ".main-header" : [
+    "[data-include='header']" : [
         "components/global-header.html"
     ],
     ".global-footer" : [
