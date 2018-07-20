@@ -138,6 +138,11 @@ Yes, until the resource is loaded the html will be seen unstyled. You could get 
 ### What size should the resources be?
 If the resource is only a few bytes of css like `h1.big { font-size: 5rem; line-height: 1.2 }` then it's not really worth creating a test just for that. Any resource that is over 1kb is ok to load conditionally.
 
+### Will this make my site faster?
+Hopefully Yes! If you are suffereing from css bloat ie. you have a 500kb css file that is loaded on every page. It would make sense to componentize it, and load it only when needed. This will cut down your file size and it should also make maintaining it easier.
+
+Also if you have some html which is the same on every page (like the header, footer and sidebar) Then loading them as components will force the browser cache them, so when a user browsers your site these html resources will be loaded instantly and the html pages will be smaller.
+
 ### What about content that is added to the DOM dynamically?
 The `carl.min.js` is loaded once just before the closing body tag, so any css selectors or window objects would have to be already present in the DOM. The script can of cource be called again as a callback after you've loaded your dynamic content, then all the tests would be ran again.
 
@@ -197,5 +202,8 @@ Even better would be to inline the scripts and styles to reduce http requests (s
 
 ### Can I use Carl.js to load all my html as components
 You could, but Carl.js wasn't really built for that purpose. If you want to do that kind of thing then maybe consider using react or some other MVC framework.
+
+### Isn't loading html via Ajax bad for SEO?
+These days Google will respect content loaded via ajax, so it really shouldn't be a problem. You might not want to put facebook or twitter meta content in a html component, since their bots will not respect the ajax content.
 
 ### [DEMOS PAGE](https://github.com/Paul-Browne/carl/tree/master/demo)
