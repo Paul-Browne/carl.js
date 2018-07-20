@@ -8,7 +8,7 @@ If your lazy but efficient and want just one place where you can manage what css
 
 Carl.js works in two parts; Running tests and loading resources.
 
-The tests and resources are defined like so `"test" : [ "array of resources to load if test is passed" ]` - these can be placed in an external `resources.json` which is located at the root of your project (or elsewhere if you want) _or_ they can be [bundled together](#combining-the-script-and-resourcesjson) with the `carl.js` script. 
+The tests and resources are defined like so `"test" : [ "array of resources to load if test is passed" ]` - these can be placed in an external `resources.json` which is located at the root of your project (or elsewhere if you want) _or_ they can be [bundled together](#combining-carljs-and-resourcesjson) with the `carl.js` script. 
 
 ## The resources.json
 
