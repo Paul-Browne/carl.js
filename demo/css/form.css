@@ -1,0 +1,261 @@
+/* resets */
+
+fieldset,
+legend,
+input {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1;
+    margin: 0;
+}
+
+select {
+    text-transform: none;
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal;
+}
+
+progress {
+    vertical-align: baseline;
+}
+
+textarea {
+    overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+
+
+
+
+/* end resets */
+
+label {
+    display: inline-block;
+}
+
+input,
+label .prefix,
+label .suffix,
+label .label {
+    line-height: 40px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 16px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    font-weight: 300;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+input.rounded {
+    border-radius: 0.3em;
+}
+input.rounded-left {
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+input.rounded-right {
+    border-radius: 0 0.3rem 0.3rem 0;
+}
+
+
+label .prefix,
+label .suffix {
+    background: #ddd;
+}
+
+label img.prefix,
+label img.suffix {
+    padding: 0.4rem;
+}
+
+label .prefix {
+    border-right: 0;
+}
+
+label .suffix {
+    border-left: 0;
+}
+
+
+input.extra-small,
+label .prefix.extra-small,
+label .suffix.extra-small,
+label .label.extra-small {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+input.small,
+label .prefix.small,
+label .suffix.small,
+label .label.small {
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+input.large,
+label .prefix.large,
+label .suffix.large,
+label .label.large {
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    padding: 0 14px;
+}
+
+input.extra-large,
+label .prefix.extra-large,
+label .suffix.extra-large,
+label .label.extra-large {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    padding: 0 16px;
+}
+
+label .label {
+    border: 0;
+    padding-left: 0!important;
+}
+
+label .label.above {
+    display: block;
+}
+
+
+
+
+
+
+label .checkbox,
+label .radio {
+    display: inline-block;
+    width: 20px;
+    height: 20px;    
+    vertical-align: middle;
+    box-sizing: border-box;    
+    background-size: contain;
+    margin-right: .25rem;
+    border: 2px solid #000;
+}
+
+label .radio {
+    border-radius: 50%;
+}
+
+label .checkbox.extra-small,
+label .radio.extra-small {
+    width: 10px;
+    height: 10px;    
+    border-width: 1px;
+}
+
+label .checkbox.small,
+label .radio.small {
+    width: 15px;
+    height: 15px;        
+}
+
+label .checkbox.large,
+label .radio.large {
+    width: 25px;
+    height: 25px;        
+}
+
+label .checkbox.rounded {
+    border-radius: 20%;
+}
+
+label .checkbox.extra-large,
+label .radio.extra-large {
+    width: 30px;
+    height: 30px;    
+    border-width: 3px;
+}
+
+
+label :focus+.checkbox,
+label :active+.checkbox {
+    box-shadow: 0 0 2px 4px rgba(100,0,255,.2);
+}
+
+
+label :checked+.radio {
+    background-image: radial-gradient(#000 45%, #fff 50%);
+}
+label :checked+.checkbox{
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTkuMTI1IDE5LjkwNkwyMi4wNjIgNi45N2wtMi4xNTYtMi4xNTYtMTAuNzgxIDEwLjc4LTUuMDMxLTUuMDMtMi4xNTcgMi4xNTZ6Ii8+PC9zdmc+);
+}
+
+
+[type=radio],
+[type=checkbox],
+[type=radio]:focus,
+[type=checkbox]:focus {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+
+form div {
+    margin: 1rem 0;
+    font-size: 0;
+}
+
+
+
+
