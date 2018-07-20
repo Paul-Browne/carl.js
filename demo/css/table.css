@@ -1,0 +1,60 @@
+/* resets */
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+/* end resets */
+
+table {
+    margin-bottom: 1rem;
+}
+
+table th,
+table td {
+    padding: .66rem;
+    border-top: 1px solid #ddd;
+}
+
+table th {
+    border-top: 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+table.small th,
+table.small td {
+    padding: .33rem;
+    font-size: 0.8rem;
+}
+
+table.zebra tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+table.zebra th,
+table.zebra td {
+    border: 0;
+}
+
+table.bordered,
+table.bordered-all {
+    border: 1px solid #ddd;
+}
+
+table.bordered-all th,
+table.bordered-all td {
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+table.bordered-all th {
+    border-top: 0;
+}
+
+table.bordered-all th:first-child,
+table.bordered-all td:first-child {
+    border-left: 0;
+}
