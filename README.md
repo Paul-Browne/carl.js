@@ -1,12 +1,12 @@
-# crl
+# carl
 
 Conditional Resource Loader in about 500 bytes of javascript
 
-If your lazy but efficient and want just one place where you can manage what css, javascript or even html resources are loaded, depending on wheather are not they are actually needed, then maybe crl is for you
+If your lazy but efficient and want just one place where you can manage what css, javascript or even html resources are loaded, depending on wheather are not they are actually needed, then maybe carl is for you
 
 ## How does it work
 
-crl works in two parts; A script and a the resources json, basically the script runs tests, then if the test is passed a resource - defined in the `resources.json` will be loaded. simple.
+carl works in two parts; A script and a the resources json, basically the script runs tests, then if the test is passed a resource - defined in the `resources.json` will be loaded. simple.
 
 ## The resources.json
 
@@ -86,7 +86,7 @@ or use the `!!` to test if a window object is **undefined** or falsey
 
 ## Loading html 
 
-You can also use crl to load snippets of html, like a footer for example.
+You can also use carl to load snippets of html, like a footer for example.
 
 ```json
 {
@@ -107,10 +107,10 @@ NOTE: For loading html conditionally the test must be a selector test and not a 
 
 ## How to use
 
-Just include the `resources.json` in the root of your project and place the `crl.min.js` file just before the closing body tag on every page like so.
+Just include the `resources.json` in the root of your project and place the `carl.min.js` file just before the closing body tag on every page like so.
 
 ```html
-  <script src="js/crl.min.js"></script>
+  <script src="js/carl.min.js"></script>
 </body>
 ```
 
@@ -118,7 +118,7 @@ and your good to go. Start adding your tests and resources in the `resources.jso
 
 ## Combining the script and resources.json 
 
-Since the script is very small you might want to just include the resources.json directly inside it. This will be more efficient since it cuts out one request for the `resources.json` Use the `crl.bundle.js` for this, and include it just before the closing body tag instead of `crl.min.js`
+Since the script is very small you might want to just include the resources.json directly inside it. This will be more efficient since it cuts out one request for the `resources.json` Use the `carl.bundle.js` for this, and include it just before the closing body tag instead of `carl.min.js`
 
 ## Q & A
 
@@ -137,7 +137,7 @@ Yes, until the resource is loaded the html will be seen unstyled. You could get 
 If the resource is only a few bytes of css like `h1.big { font-size: 5rem; line-height: 1.2 }` then it's not really worth creating a test just for that. Any resource that is over 1kb is ok to load conditionally.
 
 ### What about content that is added to the DOM dynamically?
-The `crl.min.js` is loaded once just before the closing body tag, so any css selectors or window objects would have to be already present in the DOM. The script can of cource be called again as a callback after you've loaded your dynamic content, then all the tests would be ran again.
+The `carl.min.js` is loaded once just before the closing body tag, so any css selectors or window objects would have to be already present in the DOM. The script can of cource be called again as a callback after you've loaded your dynamic content, then all the tests would be ran again.
 
 ### Can I include scripts in html resources?
 Yes. Any script that is included in a html resource (like the footer.html) will be executed
@@ -193,5 +193,5 @@ Even better would be to inline the scripts and styles to reduce http requests (s
   </script>
 ```
 
-### Can I use crl to load all my html as components
-You could, but crl wasn't really built for that purpose. If you want to do that kind of thing then maybe consider using react or some other MVC framework.
+### Can I use carl to load all my html as components
+You could, but carl wasn't really built for that purpose. If you want to do that kind of thing then maybe consider using react or some other MVC framework.
