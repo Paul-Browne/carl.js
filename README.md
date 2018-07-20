@@ -6,11 +6,13 @@ If your lazy but efficient and want just one place where you can manage what css
 
 ## How does it work
 
-Carl.js works in two parts; A script and the resources json, basically the script runs tests, then if the test is passed a resource - defined in the `resources.json` - will be loaded. simple.
+Carl.js works in two parts; Running tests and loading resources.
+
+The tests and resources are defined like so `"test" : [ "array of resources to load if test is passed" ]` - these can be placed in an external `resources.json` which is located at the root of your project (or elsewhere if you want) _or_ they can be [bundled together](https://github.com/Paul-Browne/carl.js#combining-the-script-and-resourcesjson) with the `carl.js` script. 
 
 ## The resources.json
 
-the `resources.json` is a json file that lives at the root of your project and might look something like this
+this is an example of a `resources.json` 
 
 ```json
 {
@@ -116,7 +118,7 @@ Just include the `resources.json` in the root of your project and place the `car
 
 and your good to go. Start adding your tests and resources in the `resources.json`
 
-## Combining the script and resources.json 
+## Combining carl.js and resources.json 
 
 Since the script is very small you might want to just include the resources.json directly inside Carl.js. This will be more efficient since it cuts out one request for the `resources.json` Use the `carl.bundle.js` for this, and include it just before the closing body tag instead of `carl.min.js`
 
