@@ -1,0 +1,11 @@
+{
+    "table": [
+        "css/table.css"
+    ],
+    "[data-include='header']" : [
+        "components/global-header.html"
+    ],
+    ".global-footer" : [
+        "components/global-footer.html"
+    ]
+}
