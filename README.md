@@ -1,6 +1,6 @@
 ![alt text](https://github.com/Paul-Browne/carl.js/blob/master/demo/images/carljs-small.png "Carl.js logo")
 
-Conditional Asset Resource Loader in about 500 bytes of javascript
+### Conditional Asset Resource Loader in about 500 bytes of javascript
 
 If your lazy but efficient and want just one place where you can manage what css, javascript or even html resources are loaded, depending on wheather are not they are actually needed, then maybe Carl.js is for you.
 
