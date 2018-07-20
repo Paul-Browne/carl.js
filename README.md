@@ -153,8 +153,9 @@ Ajax is Asyncronous (its what the "A" stands for). So there is no gaurentee that
 Do this...
 
 ```html
-  <!-- contents of footer.html -->
+  <!-- footer.html -->
   <link rel="stylesheet" href="css/footer-styles.css" >
+
   <div>
     <p>Copyright 2020<p>
     <div>
@@ -165,21 +166,20 @@ Do this...
   <script src="js/footer-script.js"></script>
 ```
 
-Even better would be to inline the scripts and css like so...
-
+Even better would be to inline the scripts and styles to reduce http requests (since footer.html will be cached anyway)
 
 ```html
-  <!-- contents of footer.html -->
+  <!-- footer.html -->
   <style>
     /* contents of footer-styles.css */
   </style>
+
   <div>
     <p>Copyright 2020<p>
     <div>
       Site map etc...
     </div>      
   </div>
-
 
   <script>
     /* contents of footer-scripts.js */
