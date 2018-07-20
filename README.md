@@ -1,12 +1,12 @@
-# carl
+# Carl.js
 
-Conditional Resource Loader in about 500 bytes of javascript
+Conditional Asset Resource Loader in about 500 bytes of javascript
 
-If your lazy but efficient and want just one place where you can manage what css, javascript or even html resources are loaded, depending on wheather are not they are actually needed, then maybe carl is for you
+If your lazy but efficient and want just one place where you can manage what css, javascript or even html resources are loaded, depending on wheather are not they are actually needed, then maybe Carl.js is for you
 
 ## How does it work
 
-carl works in two parts; A script and a the resources json, basically the script runs tests, then if the test is passed a resource - defined in the `resources.json` will be loaded. simple.
+Carl.js works in two parts; A script and a the resources json, basically the script runs tests, then if the test is passed a resource - defined in the `resources.json` will be loaded. simple.
 
 ## The resources.json
 
@@ -86,7 +86,7 @@ or use the `!!` to test if a window object is **undefined** or falsey
 
 ## Loading html 
 
-You can also use carl to load snippets of html, like a footer for example.
+You can also use Carl.js to load snippets of html, like a footer for example.
 
 ```json
 {
@@ -118,7 +118,7 @@ and your good to go. Start adding your tests and resources in the `resources.jso
 
 ## Combining the script and resources.json 
 
-Since the script is very small you might want to just include the resources.json directly inside it. This will be more efficient since it cuts out one request for the `resources.json` Use the `carl.bundle.js` for this, and include it just before the closing body tag instead of `carl.min.js`
+Since the script is very small you might want to just include the resources.json directly inside Carl.js. This will be more efficient since it cuts out one request for the `resources.json` Use the `carl.bundle.js` for this, and include it just before the closing body tag instead of `carl.min.js`
 
 ## Q & A
 
@@ -193,7 +193,7 @@ Even better would be to inline the scripts and styles to reduce http requests (s
   </script>
 ```
 
-### Can I use carl to load all my html as components
-You could, but carl wasn't really built for that purpose. If you want to do that kind of thing then maybe consider using react or some other MVC framework.
+### Can I use Carl.js to load all my html as components
+You could, but Carl.js wasn't really built for that purpose. If you want to do that kind of thing then maybe consider using react or some other MVC framework.
 
 ### [DEMOS PAGE](https://github.com/Paul-Browne/carl/tree/master/demo)
