@@ -1,0 +1,186 @@
+<style>
+nav.main{ 
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:1rem
+}
+nav.main img{
+  width:3rem
+}
+nav.main ul{
+  display:flex;
+  justify-content:flex-end;
+  list-style-type:none;
+  padding:0;
+  margin:0
+}
+nav.main ul li{
+  padding:0 1rem;
+  border-right:2px solid #000
+}
+nav.main ul li:last-child{
+  border-right:0
+}
+nav.main ul li a{
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+  text-transform:uppercase
+}
+</style>
+
+<style>
+nav.main {
+    align-items: flex-start;
+    padding: 0;
+    height: auto
+}
+
+nav.main ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+    width: 100%;
+    position: absolute;
+    margin-top: 3rem;
+    display: none
+}
+
+nav.main ul li {
+    padding: 0;
+    border-bottom: 1px solid #fff;
+    border-right: 0;
+    background: #000
+}
+
+nav.main ul li a {
+    width: 100%;
+    display: inline-block;
+    padding: .5rem 0;
+    margin: .25rem 0;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center
+}
+
+nav.main ul li:last-child {
+    border-bottom: 0
+}
+
+nav.main button.open~ul {
+    display: block
+}
+
+nav.main button.hmbrgr {
+    outline: 0;
+    vertical-align: middle;
+    border: 0;
+    padding: 0;
+    background: 0;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer
+}
+
+nav.main button.hmbrgr span {
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 50%;
+    background: #000;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out
+}
+
+nav.main button.hmbrgr span:nth-child(2n) {
+    left: 50%
+}
+
+nav.main button.hmbrgr span:nth-child(odd) {
+    left: 0
+}
+
+nav.main button.hmbrgr span:first-child,
+nav.main button.hmbrgr span:nth-child(2) {
+    top: 0
+}
+
+nav.main button.hmbrgr span:nth-child(3),
+nav.main button.hmbrgr span:nth-child(4) {
+    top: 16px
+}
+
+nav.main button.hmbrgr span:nth-child(5),
+nav.main button.hmbrgr span:nth-child(6) {
+    top: 32px
+}
+
+nav.main button.hmbrgr.open span:first-child,
+nav.main button.hmbrgr.open span:nth-child(6) {
+    transform: rotate(45deg)
+}
+
+nav.main button.hmbrgr.open span:nth-child(2),
+nav.main button.hmbrgr.open span:nth-child(5) {
+    transform: rotate(-45deg)
+}
+
+nav.main button.hmbrgr.open span:first-child {
+    left: 4px;
+    top: 10px
+}
+
+nav.main button.hmbrgr.open span:nth-child(2) {
+    left: calc(50% - 4px);
+    top: 10px
+}
+
+nav.main button.hmbrgr.open span:nth-child(3) {
+    left: 50%;
+    width: 0
+}
+
+nav.main button.hmbrgr.open span:nth-child(4) {
+    width: 0
+}
+
+nav.main button.hmbrgr.open span:nth-child(5) {
+    left: 4px;
+    top: 22px
+}
+
+nav.main button.hmbrgr.open span:nth-child(6) {
+    left: calc(50% - 4px);
+    top: 22px
+}
+</style>
+
+<nav class="main">
+    <img src="images/logo.svg" >
+    <button class="hmbrgr">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/">always</a></li>
+        <li><a href="/">four</a></li>
+        <li><a href="/">links</a></li>
+    </ul>
+</nav>
+<script>
+document.querySelector(".hmbrgr").addEventListener("click", function(e) {
+    this.classList.toggle("open");
+});
+</script>
