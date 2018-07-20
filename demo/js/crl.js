@@ -17,6 +17,7 @@
                             newElement.href = resource;
                             document.head.appendChild(newElement);
                         } else if (/\.html($|\?)/.test(resource)) {
+                            console.log(key);
                             var xhr = new XMLHttpRequest();
                             xhr.onreadystatechange = function() {
                                 if (xhr.readyState == 4 && xhr.status == 200) {
@@ -25,9 +26,9 @@
                                     var scripts = new DOMParser().parseFromString(xhr.responseText, 'text/html').querySelectorAll("script");
                                     var i = scripts.length;
                                     while(i--){                                        
-                                        newElement = document.createElement("SCRIPT");
-                                        scripts[i].src ? newElement.src = scripts[i].src : newElement.innerHTML = scripts[i].innerHTML;
-                                        document.head.appendChild(newElement);
+                                        var newScript = document.createElement("SCRIPT");
+                                        scripts[i].src ? newScript.src = scripts[i].src : newScript.innerHTML = scripts[i].innerHTML;
+                                        document.head.appendChild(newScript);
                                     }                                    
                                 }
                             };
