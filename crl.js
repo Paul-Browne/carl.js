@@ -38,25 +38,26 @@
                             newElement.href = resource;
                             document.head.appendChild(newElement);
                         } else if (/\.html($|\?)/.test(resource)) {
+                            var storeKey = key;
 
                             // for an html snippet, eg. header or footer
-
+                            
                             var xhr = new XMLHttpRequest();
                             xhr.onreadystatechange = function() {
                                 if (xhr.readyState == 4 && xhr.status == 200) {
 
                                     // get the resource and replace the element that "passed" the test
 
-                                    document.querySelector(key).outerHTML = xhr.responseText;
+                                    document.querySelector(storeKey).outerHTML = xhr.responseText;
 
                                     // run javascript that is included in the resource (if any)
 
                                     var scripts = new DOMParser().parseFromString(xhr.responseText, 'text/html').querySelectorAll("script");
                                     var i = scripts.length;
                                     while(i--){                                        
-                                        newElement = document.createElement("SCRIPT");
-                                        scripts[i].src ? newElement.src = scripts[i].src : newElement.innerHTML = scripts[i].innerHTML;
-                                        document.head.appendChild(newElement);
+                                        var newScript = document.createElement("SCRIPT");
+                                        scripts[i].src ? newScript.src = scripts[i].src : newScript.innerHTML = scripts[i].innerHTML;
+                                        document.head.appendChild(newScript);
                                     }                                    
                                 }
                             };
