@@ -9,7 +9,7 @@
 
             // loop over all the "keys" which are the selectors
 
-            for (key in resources) {
+            for (var key in resources) {
 
                 // check if the selector exists in the DOM
                 // or is a truthy object of the window, eg window.abc = true or window.abc = 42 or window.abc = "hello world!" etc
@@ -28,6 +28,7 @@
 
                             newElement = document.createElement("SCRIPT");
                             newElement.src = resource;
+                            document.head.appendChild(newElement);
                         } else if (/\.css($|\?)/.test(resource)) {
 
                             // for css files, add a link element
@@ -35,8 +36,23 @@
                             newElement = document.createElement("LINK");
                             newElement.rel = "stylesheet";
                             newElement.href = resource;
-                        }
-                        document.head.appendChild(newElement);
+                            document.head.appendChild(newElement);
+                        } else if (/\.html($|\?)/.test(resource)) {
+
+                            // for an html snippet, eg. header or footer
+
+                            var xhr = new XMLHttpRequest();
+                            xhr.onreadystatechange = function() {
+                                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                                    // get the resource and replace the element that "passed" the test
+
+                                    document.querySelector(key).outerHTML = xhr.responseText;
+                                }
+                            };
+                            xhr.open("GET", resource, true);
+                            xhr.send();
+                        }                        
                     })
                 }
             }
