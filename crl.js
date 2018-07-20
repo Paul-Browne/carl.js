@@ -48,6 +48,17 @@
                                     // get the resource and replace the element that "passed" the test
 
                                     document.querySelector(key).outerHTML = xhr.responseText;
+
+                                    // run javascript that is included in the resource (if any)
+
+                                    var scripts = new DOMParser().parseFromString(xhr.responseText, 'text/html').querySelectorAll("script");
+                                    var i = scripts.length;
+                                    while(i--){                                        
+                                        newElement = document.createElement("SCRIPT");
+                                        scripts[i].src ? newElement.src = scripts[i].src : "";
+                                        scripts[i].innerHTML ? newElement.innerHTML = scripts[i].innerHTML : "";
+                                        document.head.appendChild(newElement);
+                                    }                                    
                                 }
                             };
                             xhr.open("GET", resource, true);
