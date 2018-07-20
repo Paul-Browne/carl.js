@@ -8,7 +8,7 @@ If your lazy but efficient and want just one place where you can manage what css
 
 crl works in two parts; A script and a the resources json, basically the script runs tests, then if the test is passed a resource - defined in the `resources.json` will be loaded. simple.
 
-## the resources.json
+## The resources.json
 
 the `resources.json` is a json file that lives at the root of your project and might look something like this
 
@@ -28,7 +28,7 @@ So basically whats happening here is that if the class `amazing-carousel` is fou
 
 You aren't just limited to classes. You can also use id's, plain tag names or even data-attribute selectors. Basically any valid css selector that would work in a `querySelector()`, like so
 
-## test for css selectors
+## Test for css selectors
 
 ```json
 {
@@ -52,7 +52,7 @@ You aren't just limited to classes. You can also use id's, plain tag names or ev
 }
 ```
 
-## test for window.objects
+## Test for window.objects
 
 As well as testing for css selectors, you can also test window objects, like `window.something`. So, for example, if you wanted to test if the browser supports scroll snap points using Modernizr
 
@@ -96,12 +96,16 @@ You can also use crl to load snippets of html, like a footer for example.
 }
 ```
 
-and the footer.html would replace the DOM element that "passed" the test
+and the html resource will replace the DOM element that retuned true for the test
 
 ```html
-  <footer class"main-footer"></footer>
+  <footer class="main-footer"></footer>
+  <!-- this will be replaced with the contents of footer.html -->
 ```
 
+NOTE: For loading html conditionally the test must be a selector test and not a window.object test. This is because the html resource replaces the DOM element that "passed" the test.
+
+## How to use
 
 Just include the `resources.json` in the root of your project and place the `crl.min.js` file just before the closing body tag on every page like so.
 
@@ -133,15 +137,15 @@ Yes, until the resource is loaded the html will be seen unstyled. You could get 
 If the resource is only a few bytes of css like `h1.big { font-size: 5rem; line-height: 1.2 }` then it's not really worth creating a test just for that. Any resource that is over 1kb is ok to load conditionally.
 
 ### What about content that is added to the DOM dynamically?
-The `crl.min.js` is loaded once just before the closing body tag, so any css selectors or window objects would have to be already present in the DOM. The script can of cource be called again as a callback after you've loaded your dynamic content, then all the tests would be ran again
+The `crl.min.js` is loaded once just before the closing body tag, so any css selectors or window objects would have to be already present in the DOM. The script can of cource be called again as a callback after you've loaded your dynamic content, then all the tests would be ran again.
 
 ### Can I include scripts in html resources?
 Yes. Any script that is included in a html resource (like the footer.html) will be executed
 
-### How can I gaurentee that a script will fire after a html resource has been loaded
+### How can I gaurantee that a script will fire after a html resource has been loaded
 You would need to include the script inside the html resource to absolutely gaurentee that it is loaded after the html has been added to the DOM.
 
-Ajax is Asyncronous (its what the "A" stands for). So there is no gaurentee that one resource is loaded before the other, so rather than doing this...
+Ajax is Asyncronous (its what the "A" stands for). Because of this there is no gaurantee that one resource is loaded before the other, so rather than doing this...
 
 ```json
 {
