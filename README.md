@@ -2,7 +2,7 @@
 
 Conditional Asset Resource Loader in about 500 bytes of javascript
 
-If your lazy but efficient and want just one place where you can manage what css, javascript or even html resources are loaded, depending on wheather are not they are actually needed, then maybe Carl.js is for you
+If your lazy but efficient and want just one place where you can manage what css, javascript or even html resources are loaded, depending on wheather are not they are actually needed, then maybe Carl.js is for you.
 
 ## How does it work
 
