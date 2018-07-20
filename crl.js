@@ -55,8 +55,7 @@
                                     var i = scripts.length;
                                     while(i--){                                        
                                         newElement = document.createElement("SCRIPT");
-                                        scripts[i].src ? newElement.src = scripts[i].src : "";
-                                        scripts[i].innerHTML ? newElement.innerHTML = scripts[i].innerHTML : "";
+                                        scripts[i].src ? newElement.src = scripts[i].src : newElement.innerHTML = scripts[i].innerHTML;
                                         document.head.appendChild(newElement);
                                     }                                    
                                 }
