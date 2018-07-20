@@ -25,5 +25,14 @@
   ],
   "!!dataLayer" : [
     "js/some-google-analytics-script.js"
+  ],
+  
+  "header.header" : [
+    "components/global-header.html",
+    "components/css/global-header.css"
+  ],
+  "[data-include='footer']" : [
+    "components/global-footer.html",
+    "components/css/global-footer.css"
   ]
 }
