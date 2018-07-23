@@ -124,7 +124,7 @@ Since the script is very small you might want to just include the resources.json
 
 ## Q & A
 
-### Will there be FLOC (flashes of unstyled content)?
+### Will there be FOUC (flashes of unstyled content)?
 Yes, until the resource is loaded the html will be seen unstyled. You could get around this by hiding the html, then loading a small piece of css thet unhides it.
 
 ```json
