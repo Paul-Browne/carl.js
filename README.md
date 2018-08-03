@@ -26,7 +26,7 @@ this is an example of a `resources.json`
 }
 ```
 
-So basically whats happening here is that if the class `amazing-carousel` is found in the DOM, then the carousel resources `carousel.css` and `carousel.js` will be loaded. Similarly if the class `no-objectfit` is found, then the `object-fit-polyfill.js` will be loaded
+So basically whats happening here is that if the class `amazing-carousel` is found in the DOM, then the carousel resources `carousel.css` and `carousel.js` will be loaded. Also if the class `no-objectfit` is found, then the `object-fit-polyfill.js` will be loaded
 
 You aren't just limited to classes. You can also use id's, plain tag names or even data-attribute selectors. Basically any valid css selector that would work in a `querySelector()`, like so
 
@@ -98,7 +98,7 @@ You can also use Carl.js to load snippets of html, like a footer for example.
 }
 ```
 
-and the html resource will replace the DOM element that retuned true for the test
+and the html resource will replace the DOM element that returned true for the test
 
 ```html
   <footer class="main-footer"></footer>
