@@ -1,4 +1,4 @@
-![image](https://rawgit.com/Paul-Browne/carl.js/master/demo/images/carljs-small.png "Carl.js logo")
+![image](https://cdn.jsdelivr.net/gh/Paul-Browne/carl.js/demo/images/carljs-small.png "Carl.js logo")
 
 ### Conditional Asset Resource Loader in about 500 bytes of javascript
 
