@@ -152,7 +152,7 @@ Yes. Any script that is included in a html resource (like the `footer.html`) wil
 ### How can I guarantee that a script will fire after an html resource has been loaded?
 You would need to include the script inside the html resource to absolutely guarantee that it is loaded after the html has been added to the DOM.
 
-Ajax is Asyncronous (its what the "A" stands for). Because of this there is no guarantee that one resource is loaded before the other. So, rather than doing this...
+Ajax is Asyncronous (it's what the "A" stands for). Because of this there is no guarantee that one resource is loaded before the other. So, rather than doing this...
 
 ```json
 {
